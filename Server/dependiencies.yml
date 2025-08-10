@@ -1,0 +1,19 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.3.0
+    container_name: mysql-8.3.0
+    restart: always
+    environment:
+      # Corrected spelling below
+      MYSQL_ROOT_PASSWORD: Rahul.123*
+      MYSQL_USER: test
+      MYSQL_PASSWORD: Rahul.123*
+    ports:
+      - '3307:3306'
+    volumes:
+      - mysql-db:/var/lib/mysql
+
+volumes:
+  mysql-db:
+    driver: local
