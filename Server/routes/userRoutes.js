@@ -6,6 +6,6 @@ const userRouter = express.Router();
 
 userRouter.get('/get-user-creations', auth, getUserCreations);
 userRouter.get('/get-published-creations', auth, getPublishedCreations);
-userRouter.get('/toggle-like-creation', auth, toggleCreationsLike);
+userRouter.post('/toggle-like-creation', auth, toggleCreationsLike);
 
 export default userRouter;
