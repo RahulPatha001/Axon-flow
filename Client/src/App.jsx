@@ -11,7 +11,8 @@ import RemoveObject from './pages/RemoveObject'
 import ReviewResume from './pages/ReviewResume'
 import Community from './pages/community'
 import { useAuth } from '@clerk/clerk-react'
-import { useEffect } from 'react'
+import { useEffect } from 'react' 
+import {Toster} from 'react-hot-toast'
 
 function App() {
   const {getToken} = useAuth();
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <div>
+      <Toster/>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/ai' element={<Layout/>}>
