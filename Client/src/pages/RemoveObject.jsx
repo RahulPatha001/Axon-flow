@@ -14,28 +14,31 @@ function RemoveObject() {
     
     const {getToken} = useAuth();
   
-  const onSubmitHandler = async(e) => {
-  e.preventDefault() // to prevent webpage from reloading
-  try {
-    setLoading(true);
-    const formData = new FormData();
-    formData.append('image', input);
-
-    const {data} = await axios.post('/api/ai/remove-image-background',formData,{
-        headers:{Authorization :`Bearer ${await getToken()}`}
-      })
-    if(data.success){
-      setContent(data.content);
-    }else{
-      toast.error(data.message); 
-    }
-
-  } catch (error) {
-    toast.error(error.message);
-  }
-  setLoading(false);
-  }
-
+ const onSubmitHandler = async(e) => {
+       e.preventDefault() // to prevent webpage from reloading
+       try {
+         setLoading(true);
+         if(Object.split(' ').length){
+           return toast("Please enter only one object");
+         }
+         const formData = new FormData();
+         formData.append('image', input);
+         formData.append('object', Object);
+     
+         const {data} = await axios.post('/api/ai/remove-image-object',formData,{
+             headers:{Authorization :`Bearer ${await getToken()}`}
+           })
+         if(data.success){
+           setContent(data.content);
+         }else{
+           toast.error(data.message); 
+         }
+     
+       } catch (error) {
+         toast.error(error.message);
+       }
+       setLoading(false);
+       }
   return (
     <div className='h-full overflow-y-scroll p-6 items-start flex flex-wrap gap-4 text-slate-700'>
       {/* left */}c
@@ -58,7 +61,7 @@ function RemoveObject() {
         to-[#4A7AFF] text-white px-4 py-2 mt-6 text-sm rounded-lg cursor-pointer'>
           {
             loading ? <span className='w-4 h-4 my-1 rounded-full border-2 border-t-transparent
-            animate-spin'></span> : <Eraser className='w-5'/>
+            animate-spin'></span> : <Scissors className='w-5'/>
           }
           Remove Object
         </button>
