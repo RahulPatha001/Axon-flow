@@ -54,7 +54,7 @@ export const toggleCreationsLike = async (req, res) => {
         updatedLikes = [...currentLikes, userIdstr]
         message - 'creation liked'
     }
-    const formattedArray = `{${updatedLikes.json(',')}}`
+    const formattedArray = `{${updatedLikes.join(',')}}`
 
     const [result] = await pool.query(
       `update creations set likes = ${formattedArray}::text[] where id = ${id}`
