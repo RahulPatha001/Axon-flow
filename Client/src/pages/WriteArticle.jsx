@@ -84,7 +84,7 @@ function WriteArticle() {
           <h1 className='text-xl font-semibold'>Generated Article</h1>
         </div>
         {
-          content ? (
+          !content ? (
             <div className='flex-1 flex justify-center items-center'>
           <div className='text-sm flex flex-col items-center gap-5 text-gray-400'>
           <Edit className='w-9 h-9'/>
