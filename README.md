@@ -1,12 +1,64 @@
-# React + Vite
+<p align="center">
+  <img src="./Client/src/assets/logo.png" alt="axon flow logo" width="350"/>
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# axon flow
 
-Currently, two official plugins are available:
+**axon flow** is a full-stack application . It provides a suite of AI-powered tools including article generation, blog title suggestions, image manipulation (generation, background remover, object remover), and resume analysis. The platform features subscription-based premium access, enabling monetization of advanced AI functionalities.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Article Generator:** Generate high-quality articles from prompts.
+- **Blog Title Generator:** Create SEO-friendly blog titles with AI assistance.
+- **Image Generator:** Produce unique images based on text input.
+- **Background Remover:** Remove backgrounds from images instantly.
+- **Object Remover:** Erase unwanted elements from images using AI.
+- **Resume Analyzer:** Analyze and optimize resumes with smart suggestions.
+- **User Authentication:** Secure login and registration, role-based access.
+- **Subscription Management:** Payment integration (e.g., Stripe) for premium features.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- **Frontend:** React.js, modern hooks, state management
+- **Backend:** Node.js, Express.js, REST APIs
+- **Database:** PostgreSQL
+- **Authentication:** JWT-based authentication
+- **Payments:** Stripe or equivalent
+- **AI Integrations:** OpenAI, image processing APIs and libraries
+
+
+## Setup & Installation
+
+1. **Clone the repository**
+    ```
+    git clone https://github.com/yourusername/axon-flow.git
+    cd axon-flow
+    ```
+
+2. **Install dependencies**
+    ```
+    cd server
+    npm install
+    cd ../client
+    npm install
+    ```
+
+3. **Run the application**
+    - Backend:
+      ```
+      npm run dev
+      ```
+    - Frontend:
+      ```
+      cd ../client
+      npm start
+      ```
+
+4. Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
+
+
+
+
+
+
+
